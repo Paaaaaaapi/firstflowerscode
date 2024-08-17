@@ -1,0 +1,52 @@
+/* Apply background animation */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffcccc;
+    overflow: hidden;
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../Images/461059_270471526376317_18614725_o.jpg');
+    background-size: cover;
+    background-repeat: repeat;
+    opacity: 0.2;
+    z-index: -1;
+    animation: moveBackground 60s linear infinite;
+}
+
+/* Text styling */
+.content {
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: #ffffff;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
